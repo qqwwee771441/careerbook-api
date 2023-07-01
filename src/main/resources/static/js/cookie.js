@@ -1,10 +1,14 @@
+const naver_login_token_cookie_name = "naver_login_token";
+
 function setCookie(cookie_name, value, minutes) {
     const exdate = new Date();
     exdate.setMinutes(exdate.getMinutes() + minutes);
 
     const cookie_value = encodeURIComponent(value) + ((minutes == null) ? '' : ';' +
         'expires=' + exdate.toUTCString());
+
     document.cookie = cookie_name + '=' + cookie_value;
+    alert("set name=" + cookie_name + ", value=" + cookie_value);
 }
 
 function getCookie(cookie_name) {
@@ -13,9 +17,10 @@ function getCookie(cookie_name) {
     for(let i=0; i<cookies.length; i++) {
         let name = cookies[i].substring(0, cookies[i].indexOf('='));
         let value = cookies[i].substring(cookies[i].indexOf('=') + 1);
-        name = name.replace("/^\s+|\s+$/g", '');
+        name = name.replace(/^\s+|\s+$/g, '');
 
         if (name == cookie_name) {
+            alert("get name=" + name + ", value=" + value);
             return decodeURIComponent(value);
         }
     }
