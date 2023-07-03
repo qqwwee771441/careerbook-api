@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 public class CareerbookApiApplication {
-
     public static void main(String[] args) {
         /**
          * 내장 톰캣 서버 실행 및 유지
@@ -17,5 +16,4 @@ public class CareerbookApiApplication {
          */
         SpringApplication.run(CareerbookApiApplication.class, args);
     }
-
 }

@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 
 import javax.servlet.http.HttpSession;
 
@@ -25,11 +26,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-                .csrf().disable().headers().frameOptions().disable()
-                .and()
+                .csrf().disable()//.headers().frameOptions().disable()
+                //.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                //.and()
                 .authorizeRequests()
-                .antMatchers("/", "/css/**", "/js/**", "/images/**").permitAll()
+                .antMatchers("/main/company/**").hasRole("COMPANY")
+                .antMatchers("/main/personal/**").hasRole(Role.USER.name())
                 .antMatchers("/api/v1/**").hasRole(Role.USER.name())
+                .antMatchers("/", "/css/**", "/js/**", "/images/**", "/home_login/**", "/main/**", "/signup/**", "/api/*").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .logout().logoutSuccessUrl("/")

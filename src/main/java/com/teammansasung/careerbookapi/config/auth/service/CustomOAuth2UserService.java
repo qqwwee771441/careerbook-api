@@ -1,10 +1,13 @@
 package com.teammansasung.careerbookapi.config.auth.service;
 
+import com.teammansasung.careerbookapi.api.v1.ProfileController;
 import com.teammansasung.careerbookapi.config.auth.dto.OAuthAttributes;
 import com.teammansasung.careerbookapi.config.auth.dto.SessionUser;
 import com.teammansasung.careerbookapi.domain.user.User;
 import com.teammansasung.careerbookapi.domain.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
@@ -23,6 +26,7 @@ import java.util.Collections;
 @RequiredArgsConstructor
 @Service
 public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequest, OAuth2User> {
+    private final Logger LOGGER = LoggerFactory.getLogger(CustomOAuth2UserService.class);
     private final UserRepository userRepository;
     private final HttpSession httpSession;
 
@@ -35,6 +39,7 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
         String userNameAttributeName = userRequest.getClientRegistration().getProviderDetails().getUserInfoEndpoint().getUserNameAttributeName();
 
         OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
+        LOGGER.info("loadUser 속성: " + attributes.toString());
         User user = saveOrUpdate(attributes);
 
         httpSession.setAttribute("user", new SessionUser(user));

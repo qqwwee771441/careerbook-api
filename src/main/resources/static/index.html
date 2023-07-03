@@ -2,12 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <script type="text/javascript" src="js/cookie.js"></script>
+    <title>CareerBook</title>
+    <!--script type="text/javascript" src="js/cookie.js"></script-->
 </head>
 <body>
-    <a href="/logout">Logout</a>
-    <a href="/oauth2/authorization/google">Google Login</a>
-    <a href="/api/v1/profile">API</a>
+    <!--a href="/home_login/home.html">커리어북 로그인</a-->
+    <!--a href="/signin.html">백엔드 테스트</a-->
+    <script type="text/javascript">
+        fetch('/api/status', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify()
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data == 1) {
+                    window.location.href = "/main/personal/home.html";
+                }
+                else if (data == 2) {
+                    window.location.href = "/main/company/home.html";
+                }
+                else {
+                    window.location.href = "/home_login/home.html";
+                }
+            });
+    </script>
 </body>
 </html>
