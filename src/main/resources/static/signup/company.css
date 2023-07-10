@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    position: absolute;
+    top: 30px;
+    width: 320px;
+    height: fit-content;
+}
+
+header img {
+    width: 100%;
+    height: auto;
+}
+
+body>span {
+    display: block;
+    text-align: center;
+}
+
+body>span strong {
+    color: #37DE2F;
+}
+
+body>span strong:hover {
+    cursor: pointer;
+}
+
+section {
+    width: 400px;
+    border: 1px solid lightslategray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+section h3 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+section div {
+    margin-bottom: 10px;
+    width: 300px;
+}
+
+section div p {
+    font-size: 12px;
+    color: red;
+}
+
+section form input {
+    width: 300px;
+    height: 40px;
+    padding: 0 5px 2px;
+}
+
+section form button {
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    background-color:palevioletred;
+    border: none;
+    color: white;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+section form button:disabled {
+    background-color: rgb(231, 120, 157);
+    cursor: default;
+}
+
+section form button:hover {
+    background-color:rgb(197, 103, 134);
+}
+
+section form button:hover:disabled {
+    background-color: rgb(231, 120, 157);
+}
+
+footer {
+    margin: 0 auto;
+    position: absolute;
+    bottom: 30px;
+    color: gray;
+    font-size: 12px;
+}

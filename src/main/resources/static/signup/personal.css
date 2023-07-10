@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    position: absolute;
+    top: 30px;
+    width: 320px;
+    height: fit-content;
+}
+
+header img {
+    width: 100%;
+    height: auto;
+}
+
+section {
+    width: 400px;
+    text-align: center;
+    border: 1px solid lightslategray;
+    margin-top: 20px;
+}
+
+section h3 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.signup {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.signup .social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.social button{
+    width: 300px;
+    height: 60px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    border: none;
+    font-size: 18px;
+}
+
+.social img {
+    margin-left: 5px;
+    margin-right: 30px;
+    width: 60px;
+    height: 60px;
+}
+
+.social .naver {
+    background-color: #1EC800;
+    color: white;
+}
+
+.social .kakao {
+    background-color: #FAE100;
+}
+
+.kakao img {
+    padding: 5px;
+}
+
+.social .google {
+    background-color: whitesmoke;
+    margin-bottom: 30px;
+}
+
+.google img {
+    padding: 8px;
+}
+
+body>span {
+    display: block;
+    text-align: center;
+}
+
+body>span strong {
+    color: palevioletred;
+}
+
+body>span strong:hover {
+    cursor: pointer;
+}
+
+footer {
+    margin: 0 auto;
+    position: absolute;
+    bottom: 30px;
+    color: gray;
+    font-size: 12px;
+}

@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    width: 400px;
+    height: 600px;
+    border: 1px solid lightslategray;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+section .main-logo {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+section form input {
+    width: 300px;
+    height: 40px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
+
+section form button {
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    background-color:palevioletred;
+    border: none;
+    color: white;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+section form button:disabled {
+    background-color: rgb(231, 120, 157);
+    cursor: default;
+}
+
+section form button:hover {
+    background-color:rgb(197, 103, 134);
+}
+
+section form button:hover:disabled {
+    background-color: rgb(231, 120, 157);
+}
+
+section .split {
+    display: flex;
+    width: 300px;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+section .split hr {
+    flex: 1;
+}
+
+section .split span {
+    margin: 0 20px;
+    color: dimgray;
+    font-size: 14px;
+}
+
+section .social-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-login button {
+    width: 200px;
+    height: 40px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    border: none;
+}
+
+.social-login img {
+    margin-left: 5px;
+    margin-right: 20px;
+    width: 40px;
+    height: 40px;
+}
+
+.social-login .naver {
+    background-color: #1EC800;
+    color: white;
+}
+
+.social-login .kakao {
+    background-color: #FAE100;
+}
+
+.kakao img {
+    padding: 3px;
+}
+
+.social-login .google {
+    background-color: whitesmoke;
+}
+
+.google img {
+    padding: 6px;
+}
+
+.signup {
+    margin-top: 20px;
+}
+
+.signup span {
+    color: palevioletred;
+}
+
+.signup span:hover {
+    cursor: pointer;
+}
+
+footer {
+    margin: 0 auto;
+    position: absolute;
+    bottom: 30px;
+    color: gray;
+    font-size: 12px;
+}

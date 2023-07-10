@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerBook | 함께 만들어가는 커리어</title>
+
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <section>
+        <img class="main-logo" src="images/main-logo.png" alt="logo">
+        <div class="split">
+            <hr>
+            <span><strong>기업</strong></span>
+            <hr>
+          </div>
+        <form onsubmit="return false">
+            <input type="text" id="username" name="username" placeholder="아이디">
+            <input type="password" id="password" name="password" placeholder="비밀번호">
+            <button type="submit" disabled><strong>로그인</strong></button>
+        </form>
+        <div class="split">
+            <hr>
+            <span><strong>개인</strong></span>
+            <hr>
+        </div>
+        <div class="social-login">
+            <button class="naver">
+                <img src="images/naver-logo.png" alt="naver"><strong>네이버로 로그인</strong>
+            </button>
+            <button class="kakao">
+                <img src="images/kakao-logo.png" alt="kakao"><strong>카카오로 로그인</strong>
+            </button>
+            <button class="google">
+                <img src="images/google-logo.png" alt="google"><strong>Google로 로그인</strong>
+            </button>
+        </div>
+    </section>
+
+    <div class="signup">
+        계정이 없으신가요? <span><strong>가입하기</strong></span>
+    </div>
+
+    <footer>Copyright 2023. Team 만사성 All Rights Reserved.</footer>
+
+    <script src="home.js"></script>
+</body>
+</html>
