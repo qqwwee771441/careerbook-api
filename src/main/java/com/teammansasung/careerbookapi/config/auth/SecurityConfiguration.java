@@ -31,12 +31,16 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 //.and()
                 .authorizeRequests()
                 .antMatchers("/main/company/**").hasRole("COMPANY")
+                .antMatchers("/api/v2/**").hasRole("COMPANY")
                 .antMatchers("/main/personal/**").hasRole(Role.USER.name())
                 .antMatchers("/api/v1/**").hasRole(Role.USER.name())
-                .antMatchers("/", "/css/**", "/js/**", "/images/**", "/home_login/**", "/main/**", "/signup/**", "/api/*").permitAll()
+                .antMatchers("/", "/home_login/**", "/main/**", "/signup/**").permitAll()
+                .antMatchers("/api/**", "/login").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .logout().logoutSuccessUrl("/")
+                .and()
+                .oauth2Login().loginPage("/login")
                 .and()
                 .oauth2Login().userInfoEndpoint().userService(customOAuth2UserService);
     }

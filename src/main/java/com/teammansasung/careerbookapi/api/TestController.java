@@ -1,5 +1,9 @@
 package com.teammansasung.careerbookapi.api;
 
+import com.teammansasung.careerbookapi.config.auth.LoginCompany;
+import com.teammansasung.careerbookapi.config.auth.LoginUser;
+import com.teammansasung.careerbookapi.config.auth.dto.SessionUser;
+import com.teammansasung.careerbookapi.domain.company.dto.SessionCompany;
 import com.teammansasung.careerbookapi.domain.user.Role;
 import com.teammansasung.careerbookapi.domain.user.User;
 import com.teammansasung.careerbookapi.domain.user.repository.UserRepository;
@@ -47,5 +51,20 @@ public class TestController {
     public Authentication auth() {
         SecurityContext context = SecurityContextHolder.getContext();
         return context.getAuthentication();
+    }
+
+    @GetMapping("/api/status")
+    public int status(@LoginUser SessionUser user, @LoginCompany SessionCompany company) {
+        LOGGER.info("status 메서드 호출");
+        if (user != null) {
+            LOGGER.info("status 메서드 login user true code 반환");
+            return 1;
+        }
+        if (company != null) {
+            LOGGER.info("status 메서드 login company true code 반환");
+            return 2;
+        }
+        LOGGER.info("status 메서드 null 반환");
+        return 0;
     }
 }
