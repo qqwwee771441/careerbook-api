@@ -45,6 +45,8 @@ public class CompanySignController {
         LOGGER.info("sign up method parameters: " + id + ", " + password + ", " + number);
 
         CompanySignUpResultDto companySignUpResultDto = companySignService.signUp(id, password, number, "ROLE_COMPANY");
+
+        companySignService.signIn(id, password);
         LOGGER.info("sign up method return company sign up result dto");
         return companySignUpResultDto;
     }

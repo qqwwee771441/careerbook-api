@@ -6,8 +6,12 @@
 
 body {
     display: flex;
+    flex-direction: column;
 }
 
+/*
+    header
+ */
 header {
     width: 100vw;
     height: fit-content;
@@ -16,7 +20,7 @@ header {
     background-color: white;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding: 20px;
     z-index: 100;
 }
@@ -28,6 +32,9 @@ header img:first-child {
     height: auto;
 }
 
+/*
+    search
+ */
 .search {
     width: 300px;
     position: relative;
@@ -52,7 +59,21 @@ header img:first-child {
     top: 8px
 }
 
+/*
+    contents
+ */
+.content {
+    width: 100vw;
+    flex-direction: row;
+    height: fit-content;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: left;
+}
+
 section {
+    display: block;
     flex: 1;
     padding-top: 120px;
     display: flex;
@@ -60,6 +81,9 @@ section {
     align-items: center;
 }
 
+/*
+    menu
+ */
 .menu {
     width: 20%;
     height: 100vh;
@@ -98,6 +122,10 @@ section {
     font-size: 12px;
     color: gray;
 }
+
+/*
+    recommand
+ */
 .recommand {
     width: 20%;
     height: 100vh;

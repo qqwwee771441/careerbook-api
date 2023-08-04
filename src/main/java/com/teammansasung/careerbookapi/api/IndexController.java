@@ -20,6 +20,12 @@ public class IndexController {
         return "index.html";
     }
 
+    @GetMapping("/")
+    public String frontend() {
+        String frontend = "http://localhost:3000";
+        return "redirect:" + frontend;
+    }
+
     /*@GetMapping("/")
     public String index(@LoginUser SessionUser user, @LoginCompany SessionCompany company) {
         if (user != null) {
